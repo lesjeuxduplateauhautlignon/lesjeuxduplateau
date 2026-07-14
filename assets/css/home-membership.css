@@ -1,0 +1,365 @@
+/*==================================================
+  LES JEUX DU PLATEAU
+  MEMBERSHIP.CSS
+==================================================*/
+
+
+/*=========================================
+  SECTION
+=========================================*/
+
+.membership{
+
+    background:var(--color-white);
+
+    padding:140px 0;
+
+}
+
+
+.membership .container{
+
+    display:grid;
+
+    grid-template-columns:.95fr 1.05fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+
+/*=========================================
+  CONTENU
+=========================================*/
+
+.membership-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.membership-tag{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:var(--color-secondary);
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+
+.membership h2{
+
+    font-size:clamp(2.8rem,4vw,4.5rem);
+
+    line-height:1.05;
+
+    margin-bottom:35px;
+
+}
+
+
+.membership p{
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:var(--color-text-light);
+
+    margin-bottom:35px;
+
+}
+
+
+/*=========================================
+  AVANTAGES
+=========================================*/
+
+.membership-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    margin-bottom:45px;
+
+}
+
+
+.membership-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    font-size:1.08rem;
+
+    color:var(--color-black);
+
+}
+
+
+.membership-item svg{
+
+    width:24px;
+
+    height:24px;
+
+    color:var(--color-primary);
+
+    flex-shrink:0;
+
+}
+
+
+/*=========================================
+  TARIFS
+=========================================*/
+
+.membership-prices{
+
+    display:flex;
+
+    gap:35px;
+
+    margin-bottom:45px;
+
+}
+
+
+.price-card{
+
+    flex:1;
+
+    background:var(--color-section);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-small);
+
+    transition:var(--transition);
+
+}
+
+
+.price-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+
+.price-value{
+
+    display:block;
+
+    font-family:var(--font-title);
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    color:var(--color-primary);
+
+    margin-bottom:12px;
+
+}
+
+
+.price-label{
+
+    color:var(--color-text-light);
+
+    font-size:.95rem;
+
+}
+
+
+/*=========================================
+  BOUTON
+=========================================*/
+
+.membership .button{
+
+    align-self:flex-start;
+
+}
+
+
+/*=========================================
+  PHOTO
+=========================================*/
+
+.membership-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-large);
+
+}
+
+
+.membership-image img{
+
+    width:100%;
+
+    height:720px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+
+.membership-image:hover img{
+
+    transform:scale(1.03);
+
+}
+
+
+/*=========================================
+  ANIMATION
+=========================================*/
+
+.membership-image,
+.membership-content{
+
+    opacity:0;
+
+    transform:translateY(45px);
+
+    animation:membershipAppear .9s ease forwards;
+
+}
+
+
+.membership-content{
+
+    animation-delay:.25s;
+
+}
+
+
+@keyframes membershipAppear{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================================
+  RESPONSIVE
+=========================================*/
+
+@media(max-width:1100px){
+
+    .membership .container{
+
+        grid-template-columns:1fr;
+
+        gap:70px;
+
+    }
+
+    .membership-image{
+
+        order:-1;
+
+    }
+
+    .membership-image img{
+
+        height:520px;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .membership{
+
+        padding:90px 0;
+
+        text-align:center;
+
+    }
+
+    .membership-prices{
+
+        flex-direction:column;
+
+    }
+
+    .membership .button{
+
+        align-self:center;
+
+    }
+
+    .membership-item{
+
+        justify-content:center;
+
+        text-align:left;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .membership h2{
+
+        font-size:2.3rem;
+
+    }
+
+    .membership-image img{
+
+        height:380px;
+
+    }
+
+}

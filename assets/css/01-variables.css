@@ -1,0 +1,175 @@
+/* =======================================================
+   LES JEUX DU PLATEAU
+   VARIABLES GLOBALES
+   Version 1.0
+======================================================= */
+
+:root {
+
+/* =======================================================
+   COULEURS
+======================================================= */
+
+--color-primary: #2F6F62;
+--color-primary-dark: #275B51;
+--color-primary-light: #4E8D80;
+
+--color-accent: #E7C84F;
+--color-accent-light: #F5E8A6;
+
+--color-text: #2D2D2D;
+--color-text-light: #666666;
+
+--color-white: #FFFFFF;
+
+--color-background: #FAFAF8;
+
+--color-surface: #FFFFFF;
+
+--color-border: #E8E8E8;
+
+--color-success: #4D8A63;
+
+
+/* =======================================================
+   TYPOGRAPHIE
+======================================================= */
+
+--font-title: "Poppins", sans-serif;
+--font-text: "Inter", sans-serif;
+
+--font-size-xs: .875rem;
+
+--font-size-sm: 1rem;
+
+--font-size-md: 1.125rem;
+
+--font-size-lg: 1.25rem;
+
+--font-size-xl: 1.5rem;
+
+--font-size-h3: 1.75rem;
+
+--font-size-h2: 2.5rem;
+
+--font-size-h1: clamp(2.8rem,6vw,4.5rem);
+
+
+/* =======================================================
+   EPAISSEURS
+======================================================= */
+
+--font-weight-normal:400;
+
+--font-weight-medium:500;
+
+--font-weight-semibold:600;
+
+--font-weight-bold:700;
+
+--font-weight-extra:800;
+
+
+/* =======================================================
+   LARGEURS
+======================================================= */
+
+--container-width:1200px;
+
+--text-width:720px;
+
+
+/* =======================================================
+   ESPACEMENTS
+======================================================= */
+
+--space-xxs:.5rem;
+
+--space-xs:.75rem;
+
+--space-sm:1rem;
+
+--space-md:1.5rem;
+
+--space-lg:2rem;
+
+--space-xl:3rem;
+
+--space-2xl:5rem;
+
+--space-section:7.5rem;
+
+
+/* =======================================================
+   RAYONS
+======================================================= */
+
+--radius-small:8px;
+
+--radius-medium:16px;
+
+--radius-large:24px;
+
+--radius-pill:999px;
+
+
+/* =======================================================
+   OMBRES
+======================================================= */
+
+--shadow-small:
+
+0 2px 8px rgba(0,0,0,.05);
+
+--shadow-medium:
+
+0 8px 24px rgba(0,0,0,.08);
+
+--shadow-large:
+
+0 20px 40px rgba(0,0,0,.10);
+
+
+/* =======================================================
+   TRANSITIONS
+======================================================= */
+
+--transition-fast:.20s ease;
+
+--transition-normal:.35s ease;
+
+--transition-slow:.60s ease;
+
+
+/* =======================================================
+   HEADER
+======================================================= */
+
+--header-height:88px;
+
+
+/* =======================================================
+   Z-INDEX
+======================================================= */
+
+--z-header:1000;
+
+--z-overlay:1100;
+
+--z-menu:1200;
+
+--z-modal:5000;
+
+
+/* =======================================================
+   ALIAS DE COMPATIBILITÉ — À SUPPRIMER APRÈS MIGRATION
+======================================================= */
+
+--color-secondary: var(--color-accent);
+--color-black: var(--color-text);
+--color-section: #F4F3EE;
+--color-section-green: #EEF5F2;
+--shadow-sm: var(--shadow-small);
+--transition: var(--transition-normal);
+
+}

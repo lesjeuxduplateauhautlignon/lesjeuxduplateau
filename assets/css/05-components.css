@@ -1,0 +1,308 @@
+/* =======================================================
+   LES JEUX DU PLATEAU
+   05-components.css
+   Version 1.0
+======================================================= */
+
+
+/* =======================================================
+   CONTAINER
+======================================================= */
+
+.container{
+
+    width:min(100% - 2rem,var(--container-width));
+
+    margin-inline:auto;
+
+}
+
+
+/* =======================================================
+   SECTION
+======================================================= */
+
+.section{
+
+    padding:var(--space-section) 0;
+
+}
+
+
+/* =======================================================
+   SECTION TAG
+======================================================= */
+
+.section-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:.45rem 1rem;
+
+    margin-bottom:var(--space-md);
+
+    border-radius:var(--radius-pill);
+
+    background:rgba(47,111,98,.08);
+
+    color:var(--color-primary);
+
+    font-size:var(--font-size-sm);
+
+    font-weight:var(--font-weight-semibold);
+
+    letter-spacing:.04em;
+
+}
+
+
+/* =======================================================
+   BOUTONS
+======================================================= */
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.5rem;
+
+    padding:1rem 1.8rem;
+
+    border-radius:var(--radius-pill);
+
+    font-weight:var(--font-weight-semibold);
+
+    transition:var(--transition-normal);
+
+}
+
+
+.button--primary{
+
+    background:var(--color-primary);
+
+    color:var(--color-white);
+
+}
+
+
+.button--primary:hover{
+
+    transform:translateY(-3px);
+
+    background:var(--color-primary-dark);
+
+}
+
+
+.button--secondary{
+
+    border:2px solid var(--color-primary);
+
+    color:var(--color-primary);
+
+    background:transparent;
+
+}
+
+
+.button--secondary:hover{
+
+    background:var(--color-primary);
+
+    color:var(--color-white);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =======================================================
+   CARDS
+======================================================= */
+
+.card{
+
+    background:var(--color-surface);
+
+    border-radius:var(--radius-medium);
+
+    padding:var(--space-xl);
+
+    box-shadow:var(--shadow-small);
+
+    transition:var(--transition-normal);
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+
+/* =======================================================
+   IMAGES
+======================================================= */
+
+.image-rounded{
+
+    overflow:hidden;
+
+    border-radius:var(--radius-large);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+
+.image-rounded img{
+
+    width:100%;
+
+    transition:var(--transition-slow);
+
+}
+
+
+.image-rounded:hover img{
+
+    transform:scale(1.03);
+
+}
+
+
+/* =======================================================
+   CTA
+======================================================= */
+
+.cta{
+
+    text-align:center;
+
+    padding:var(--space-2xl);
+
+    border-radius:var(--radius-large);
+
+    background:var(--color-primary);
+
+    color:var(--color-white);
+
+}
+
+
+.cta h2{
+
+    color:inherit;
+
+}
+
+
+.cta p{
+
+    margin-inline:auto;
+
+    color:rgba(255,255,255,.88);
+
+}
+
+
+/* =======================================================
+   FORMULAIRES
+======================================================= */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.6rem;
+
+    margin-bottom:var(--space-lg);
+
+}
+
+
+.form-group label{
+
+    font-weight:var(--font-weight-semibold);
+
+}
+
+
+.form-group input,
+
+.form-group textarea{
+
+    padding:1rem;
+
+    border:1px solid var(--color-border);
+
+    border-radius:var(--radius-medium);
+
+    background:var(--color-white);
+
+    transition:var(--transition-fast);
+
+}
+
+
+.form-group input:focus,
+
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 0 4px rgba(47,111,98,.12);
+
+}
+
+
+/* =======================================================
+   GRILLES
+======================================================= */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:var(--space-xl);
+
+}
+
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:var(--space-xl);
+
+}
+
+
+.grid-4{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:var(--space-xl);
+
+}

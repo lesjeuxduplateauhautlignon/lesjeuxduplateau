@@ -1,0 +1,329 @@
+/*==================================================
+  LES JEUX DU PLATEAU
+  FOOTER.CSS
+==================================================*/
+
+
+/*=========================================
+  FOOTER
+=========================================*/
+
+.site-footer{
+
+    background:var(--color-primary-dark);
+
+    color:rgba(255,255,255,.90);
+
+    padding:90px 0 35px;
+
+}
+
+
+/*=========================================
+  LAYOUT
+=========================================*/
+
+.site-footer .container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:70px;
+
+    align-items:flex-start;
+
+}
+
+
+/*=========================================
+  LOGO
+=========================================*/
+
+.footer-logo{
+
+    width:90px;
+
+    margin-bottom:25px;
+
+}
+
+.footer-description{
+
+    max-width:420px;
+
+    color:rgba(255,255,255,.75);
+
+    line-height:1.8;
+
+}
+
+
+/*=========================================
+  TITRES
+=========================================*/
+
+.footer-title{
+
+    color:white;
+
+    font-size:1rem;
+
+    margin-bottom:22px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+/*=========================================
+  LISTES
+=========================================*/
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer-links a{
+
+    color:rgba(255,255,255,.75);
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--color-secondary);
+
+}
+
+
+/*=========================================
+  CONTACT
+=========================================*/
+
+.footer-contact{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer-contact p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.75);
+
+}
+
+
+/*=========================================
+  RÉSEAUX
+=========================================*/
+
+.footer-social{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.footer-social a{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.08);
+
+    transition:var(--transition);
+
+}
+
+.footer-social a:hover{
+
+    background:var(--color-secondary);
+
+    transform:translateY(-4px);
+
+}
+
+
+/*=========================================
+  SÉPARATEUR
+=========================================*/
+
+.footer-bottom{
+
+    margin-top:70px;
+
+    padding-top:30px;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/*=========================================
+  COPYRIGHT
+=========================================*/
+
+.footer-bottom p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.60);
+
+    font-size:.92rem;
+
+}
+
+
+/*=========================================
+  CRÉDIT
+=========================================*/
+
+.footer-credit{
+
+    color:rgba(255,255,255,.60);
+
+}
+
+.footer-credit a{
+
+    color:var(--color-secondary);
+
+}
+
+
+/*=========================================
+  RESPONSIVE
+=========================================*/
+
+@media(max-width:960px){
+
+.site-footer .container{
+
+grid-template-columns:1fr;
+
+gap:45px;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.footer-description{
+
+max-width:100%;
+
+}
+
+}
+/* =========================================================
+   STABILISATION DU HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image,
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-image {
+    z-index: 0;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    z-index: 1;
+}
+
+.hero > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.scroll-indicator {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-indicator svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}

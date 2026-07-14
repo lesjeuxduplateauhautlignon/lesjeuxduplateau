@@ -1,0 +1,84 @@
+/* =======================================================
+   BASE
+======================================================= */
+
+html{
+
+    font-size:16px;
+
+}
+
+body{
+
+    font-family:var(--font-text);
+
+    font-size:var(--font-size-md);
+
+    font-weight:var(--font-weight-normal);
+
+    line-height:1.7;
+
+    color:var(--color-text);
+
+    background:var(--color-background);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:var(--font-title);
+
+    font-weight:var(--font-weight-bold);
+
+    line-height:1.15;
+
+    color:var(--color-primary);
+
+}
+
+h1{
+
+    font-size:var(--font-size-h1);
+
+}
+
+h2{
+
+    font-size:var(--font-size-h2);
+
+}
+
+h3{
+
+    font-size:var(--font-size-h3);
+
+}
+
+p{
+
+    max-width:var(--text-width);
+
+    color:var(--color-text-light);
+
+}
+
+strong{
+
+    color:var(--color-text);
+
+    font-weight:var(--font-weight-semibold);
+
+}
+
+::selection{
+
+    background:var(--color-accent);
+
+    color:var(--color-primary);
+
+}
