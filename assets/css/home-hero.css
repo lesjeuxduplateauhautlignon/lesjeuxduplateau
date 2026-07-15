@@ -38,14 +38,12 @@
 }
 
 
-.hero-image img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -53,21 +51,17 @@
   VOILE SOMBRE
 =========================================*/
 
-.hero-overlay{
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
+    background: linear-gradient(
         90deg,
-        rgba(20,20,20,.72) 0%,
-        rgba(20,20,20,.45) 35%,
-        rgba(20,20,20,.18) 100%
+        rgba(18, 32, 29, 0.60) 0%,
+        rgba(18, 32, 29, 0.34) 46%,
+        rgba(18, 32, 29, 0.08) 100%
     );
-
-    z-index:1;
-
 }
 
 
@@ -117,7 +111,7 @@
 
     font-size:1.45rem;
 
-    max-width:650px;
+    max-width:600px;
 
     margin-bottom:50px;
 
@@ -187,35 +181,27 @@
   BOUTON SECONDAIRE
 =========================================*/
 
-.button-secondary{
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    display:inline-flex;
+    padding: 18px 38px;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
 
-    align-items:center;
+    background: #ffffff;
+    color: var(--color-primary);
 
-    justify-content:center;
-
-    padding:18px 38px;
-
-    border-radius:999px;
-
-    border:2px solid rgba(255,255,255,.75);
-
-    color:white;
-
-    font-weight:600;
-
-    transition:.35s;
-
+    font-weight: 600;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-small);
 }
 
-
-.button-secondary:hover{
-
-    background:white;
-
-    color:var(--color-primary);
-
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--color-primary-dark);
+    transform: translateY(-3px);
 }
 
 
@@ -401,4 +387,36 @@
 
     font-weight:600;
 
+.hero-content {
+    padding-top: 90px;
+}
+
+.hero-kicker{
+    display:inline-block;
+    max-width:100%;
+    font-size:0.95rem;
+    letter-spacing:.18em;
+    line-height:1.6;
+    margin-bottom:1.5rem;
+    white-space:nowrap;
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+}
+
+.button-secondary:hover {
+    background: #ffffff;
+    color: var(--color-primary);
+}
+
+.scroll-indicator {
+    color: #ffffff;
+}
+
+.scroll-indicator svg {
+    stroke: currentColor;
 }
