@@ -1,261 +1,350 @@
 /*==================================================
-  LES JEUX DU PLATEAU
-  FOOTER.CSS
+  PAGE PREMIÈRE VISITE
 ==================================================*/
 
 
-/*=========================================
-  FOOTER
-=========================================*/
+/* HERO */
 
-.site-footer{
+.page-hero{
 
-    background:var(--color-primary-dark);
-
-    color:rgba(255,255,255,.90);
-
-    padding:90px 0 35px;
+    padding:120px 0 70px;
 
 }
 
+.page-hero .container{
 
-/*=========================================
-  LAYOUT
-=========================================*/
-
-.site-footer .container{
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr 1fr;
-
-    gap:70px;
-
-    align-items:flex-start;
+    max-width:1100px;
 
 }
 
+.page-hero h1{
 
-/*=========================================
-  LOGO
-=========================================*/
+    max-width:12ch;
 
-.footer-logo{
+    margin:20px 0 28px;
 
-    width:90px;
+    line-height:.96;
 
-    margin-bottom:25px;
+    letter-spacing:-.045em;
 
 }
 
-.footer-description{
+.page-hero p{
 
-    max-width:420px;
+    max-width:720px;
 
-    color:rgba(255,255,255,.75);
+    font-size:1.12rem;
 
     line-height:1.8;
 
 }
 
 
-/*=========================================
-  TITRES
-=========================================*/
+/* PREMIÈRE SOIRÉE */
 
-.footer-title{
+.first-evening{
 
-    color:white;
+    padding:20px 0 120px;
 
-    font-size:1rem;
+}
 
-    margin-bottom:22px;
+.first-evening .container{
 
-    letter-spacing:1px;
+    display:grid;
 
-    text-transform:uppercase;
+    grid-template-columns:minmax(0,1.08fr) minmax(380px,.92fr);
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.first-evening-image{
+
+    min-height:620px;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+}
+
+.first-evening-image img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    min-height:620px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+.first-evening-content{
+
+    max-width:560px;
+
+}
+
+.first-evening-content h2{
+
+    margin:22px 0 28px;
+    line-height:1.05;
+
+}
+
+.first-evening-content p{
+
+    margin-bottom:20px;
+
+    line-height:1.85;
+
+}
+
+.first-evening-content .button{
+
+    margin-top:18px;
+
+    background:var(--color-primary);
+
+    color:var(--color-white);
 
 }
 
 
-/*=========================================
-  LISTES
-=========================================*/
+/* ÉTAPES */
 
-.footer-links{
+.visit-steps{
 
-    display:flex;
+    padding:130px 0;
 
-    flex-direction:column;
-
-    gap:14px;
+    background:var(--color-background);
 
 }
 
-.footer-links a{
+.visit-steps .container{
 
-    color:rgba(255,255,255,.75);
-
-    transition:var(--transition);
+    max-width:1050px;
 
 }
 
-.footer-links a:hover{
+.visit-steps-intro{
 
-    color:var(--color-secondary);
+    margin:18px 0 70px;
 
-}
-
-
-/*=========================================
-  CONTACT
-=========================================*/
-
-.footer-contact{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
+    font-size:1.1rem;
 
 }
 
-.footer-contact p{
+.steps{
+
+    border-top:1px solid var(--color-border);
+
+}
+
+.step{
+
+    display:grid;
+
+    grid-template-columns:110px 1fr;
+
+    gap:35px;
+
+    padding:38px 0;
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+.step-number{
+
+    font-family:var(--font-title);
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    color:var(--color-primary);
+
+    line-height:1;
+
+}
+
+.step-content h3{
+
+    margin-bottom:10px;
+
+}
+
+.step-content p{
 
     margin:0;
 
-    color:rgba(255,255,255,.75);
+    max-width:650px;
 
 }
 
 
-/*=========================================
-  RÉSEAUX
-=========================================*/
+/* FAQ */
 
-.footer-social{
+.visit-faq{
 
-    display:flex;
-
-    gap:18px;
-
-    margin-top:25px;
+    padding:130px 0;
 
 }
 
-.footer-social a{
+.visit-faq-grid{
 
-    width:44px;
+    margin-top:65px;
 
-    height:44px;
+    display:grid;
 
-    border-radius:50%;
+    grid-template-columns:repeat(2,1fr);
+
+    border-top:1px solid var(--color-border);
+
+    border-left:1px solid var(--color-border);
+
+}
+
+.faq-card{
+
+    padding:46px;
+
+    border-right:1px solid var(--color-border);
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+.faq-card h3{
+
+    margin-bottom:18px;
+
+}
+
+.faq-card p{
+
+    margin:0;
+
+    line-height:1.8;
+
+}
+
+
+/* CTA */
+
+.visit-cta{
+
+    padding:0 0 130px;
+
+}
+
+.visit-cta-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:90px;
+
+    text-align:center;
+
+    background:var(--color-primary-dark);
+
+    color:var(--color-white);
+
+    border-radius:30px;
+
+}
+
+.visit-cta-card h2{
+
+    color:var(--color-white);
+
+    margin:22px 0;
+
+}
+
+.visit-cta-card p{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    color:rgba(255,255,255,.82);
+
+}
+
+.visit-cta-buttons{
 
     display:flex;
-
-    align-items:center;
 
     justify-content:center;
 
-    background:rgba(255,255,255,.08);
-
-    transition:var(--transition);
-
-}
-
-.footer-social a:hover{
-
-    background:var(--color-secondary);
-
-    transform:translateY(-4px);
-
-}
-
-
-/*=========================================
-  SÉPARATEUR
-=========================================*/
-
-.footer-bottom{
-
-    margin-top:70px;
-
-    padding-top:30px;
-
-    border-top:1px solid rgba(255,255,255,.12);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:30px;
+    gap:18px;
 
     flex-wrap:wrap;
 
 }
 
 
-/*=========================================
-  COPYRIGHT
-=========================================*/
+/* RESPONSIVE */
 
-.footer-bottom p{
+@media(max-width:900px){
 
-    margin:0;
+    .page-hero{
 
-    color:rgba(255,255,255,.60);
+        padding:125px 0 70px;
 
-    font-size:.92rem;
+    }
 
+    .first-evening .container{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+
+    }
+
+    .first-evening-image,
+    .first-evening-image img{
+
+        min-height:460px;
+
+    }
+
+    .first-evening-content{
+
+        max-width:none;
+
+    }
+
+    .step{
+
+        grid-template-columns:70px 1fr;
+
+    }
+
+    .visit-faq-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .visit-cta-card{
+
+        padding:65px 30px;
+
+    }
+.visit-cta-card .section-tag{
+    color:rgba(255,255,255,.72);
+    background:rgba(255,255,255,.08);
 }
-
-
-/*=========================================
-  CRÉDIT
-=========================================*/
-
-.footer-credit{
-
-    color:rgba(255,255,255,.60);
-
-}
-
-.footer-credit a{
-
-    color:var(--color-secondary);
-
-}
-
-
-/*=========================================
-  RESPONSIVE
-=========================================*/
-
-@media(max-width:960px){
-
-.site-footer .container{
-
-grid-template-columns:1fr;
-
-gap:45px;
-
-}
-
-.footer-bottom{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-.footer-description{
-
-max-width:100%;
-
-}
-
 }

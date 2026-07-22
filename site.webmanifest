@@ -1,0 +1,22 @@
+{
+  "name": "Les Jeux du Plateau",
+  "short_name": "Jeux du Plateau",
+  "description": "Association de jeux de société sur le Plateau du Haut-Lignon",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F7F6",
+  "theme_color": "#2F6F62",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "assets/logos/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logos/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

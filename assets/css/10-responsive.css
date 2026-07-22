@@ -1,261 +1,284 @@
-/*==================================================
-  LES JEUX DU PLATEAU
-  FOOTER.CSS
-==================================================*/
+/* =======================================================
+   LES JEUX DU PLATEAU — RESPONSIVE GLOBAL
+   Sprint 3.1
+======================================================= */
 
+/* Sécurité générale : aucun média ne doit déborder. */
+img,
+svg,
+video,
+canvas,
+iframe {
+    max-width: 100%;
+}
 
-/*=========================================
-  FOOTER
-=========================================*/
+html {
+    overflow-x: hidden;
+}
 
-.site-footer{
+body {
+    overflow-x: clip;
+}
 
-    background:var(--color-primary-dark);
+/* Tablettes et petits ordinateurs */
+@media (max-width: 1100px) {
+    :root {
+        --space-section: 6rem;
+    }
 
-    color:rgba(255,255,255,.90);
+    .container {
+        width: min(100% - 3rem, var(--container-width));
+    }
 
-    padding:90px 0 35px;
+    .layout-2,
+    .grid-4 {
+        gap: 2rem;
+    }
+}
 
+/* Navigation mobile et grilles communes */
+@media (max-width: 900px) {
+    :root {
+        --header-height: 76px;
+        --space-section: 5rem;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .site-header {
+        height: var(--header-height);
+    }
+
+    .site-header .container {
+        position: relative;
+    }
+
+    .logo img,
+    .site-header.scrolled .logo img,
+    .site-header.is-scrolled .logo img {
+        height: 52px;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: calc(var(--z-menu) + 1);
+        display: block;
+        flex: 0 0 44px;
+        border-radius: 50%;
+    }
+
+    .main-nav {
+        position: fixed;
+        inset: var(--header-height) 0 auto 0;
+        z-index: var(--z-menu);
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        background: rgba(255,255,255,.985);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: 0 24px 42px rgba(20,45,39,.14);
+        transition: max-height .35s ease, opacity .25s ease, visibility .25s ease;
+    }
+
+    .main-nav.is-open {
+        max-height: calc(100dvh - var(--header-height));
+        overflow-y: auto;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: min(100% - 2rem, 720px);
+        margin: 0 auto;
+        padding: 1rem 0 1.35rem;
+    }
+
+    .main-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(47,111,98,.1);
+    }
+
+    .main-nav li:last-child {
+        border-bottom: 0;
+    }
+
+    .main-nav a,
+    .site-header .main-nav a,
+    .site-header.scrolled .main-nav a,
+    .site-header.is-scrolled .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem .25rem;
+        color: var(--color-text);
+        font-size: 1.05rem;
+    }
+
+    .main-nav a::after {
+        display: none;
+    }
+
+    .main-nav a[aria-current="page"] {
+        color: var(--color-primary);
+    }
+
+    .menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .layout-2,
+    .layout-2--reverse,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .layout-2--reverse {
+        direction: ltr;
+    }
+
+    .site-footer .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .site-footer .container > :first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Téléphones et petites tablettes */
+@media (max-width: 680px) {
+    :root {
+        --header-height: 70px;
+        --space-section: 4.5rem;
+        --space-2xl: 3.5rem;
+        --font-size-h2: clamp(2rem, 10vw, 2.65rem);
+    }
+
+    .container {
+        width: min(100% - 2rem, var(--container-width));
+    }
+
+    .logo img,
+    .site-header.scrolled .logo img,
+    .site-header.is-scrolled .logo img {
+        height: 47px;
+    }
+
+    .section-header,
+    .section-header--left {
+        margin-bottom: 2.5rem;
+    }
+
+    .button,
+    button,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+    }
+
+    .button {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .site-footer {
+        padding: 64px 0 28px;
+    }
+
+    .site-footer .container {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+    }
+
+    .site-footer .container > :first-child {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        margin-top: 2.75rem;
+        padding-top: 1.5rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* Google Agenda reste lisible : vue liste sur mobile pilotée par JS. */
+    .calendar-shell {
+        border-radius: 16px;
+    }
+
+    .google-calendar {
+        min-height: 640px;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: min(100% - 1.5rem, var(--container-width));
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        width: min(100% - 1.5rem, 720px);
+    }
+}
+
+/* Réduction des animations selon la préférence système. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+@media (max-width: 680px) {
+    .hero-kicker {
+        white-space: normal;
+        letter-spacing: .12em;
+    }
 }
 
 
-/*=========================================
-  LAYOUT
-=========================================*/
-
-.site-footer .container{
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr 1fr;
-
-    gap:70px;
-
-    align-items:flex-start;
-
+/* Production V1 — accessibilité et confort */
+.skip-link {
+  position: fixed; left: 1rem; top: 1rem; z-index: 10000;
+  transform: translateY(-180%); padding: .8rem 1rem; border-radius: .6rem;
+  background: #fff; color: #1f5147; font-weight: 700; box-shadow: 0 8px 30px rgba(0,0,0,.18);
 }
-
-
-/*=========================================
-  LOGO
-=========================================*/
-
-.footer-logo{
-
-    width:90px;
-
-    margin-bottom:25px;
-
-}
-
-.footer-description{
-
-    max-width:420px;
-
-    color:rgba(255,255,255,.75);
-
-    line-height:1.8;
-
-}
-
-
-/*=========================================
-  TITRES
-=========================================*/
-
-.footer-title{
-
-    color:white;
-
-    font-size:1rem;
-
-    margin-bottom:22px;
-
-    letter-spacing:1px;
-
-    text-transform:uppercase;
-
-}
-
-
-/*=========================================
-  LISTES
-=========================================*/
-
-.footer-links{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
-
-}
-
-.footer-links a{
-
-    color:rgba(255,255,255,.75);
-
-    transition:var(--transition);
-
-}
-
-.footer-links a:hover{
-
-    color:var(--color-secondary);
-
-}
-
-
-/*=========================================
-  CONTACT
-=========================================*/
-
-.footer-contact{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
-
-}
-
-.footer-contact p{
-
-    margin:0;
-
-    color:rgba(255,255,255,.75);
-
-}
-
-
-/*=========================================
-  RÉSEAUX
-=========================================*/
-
-.footer-social{
-
-    display:flex;
-
-    gap:18px;
-
-    margin-top:25px;
-
-}
-
-.footer-social a{
-
-    width:44px;
-
-    height:44px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:rgba(255,255,255,.08);
-
-    transition:var(--transition);
-
-}
-
-.footer-social a:hover{
-
-    background:var(--color-secondary);
-
-    transform:translateY(-4px);
-
-}
-
-
-/*=========================================
-  SÉPARATEUR
-=========================================*/
-
-.footer-bottom{
-
-    margin-top:70px;
-
-    padding-top:30px;
-
-    border-top:1px solid rgba(255,255,255,.12);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-
-}
-
-
-/*=========================================
-  COPYRIGHT
-=========================================*/
-
-.footer-bottom p{
-
-    margin:0;
-
-    color:rgba(255,255,255,.60);
-
-    font-size:.92rem;
-
-}
-
-
-/*=========================================
-  CRÉDIT
-=========================================*/
-
-.footer-credit{
-
-    color:rgba(255,255,255,.60);
-
-}
-
-.footer-credit a{
-
-    color:var(--color-secondary);
-
-}
-
-
-/*=========================================
-  RESPONSIVE
-=========================================*/
-
-@media(max-width:960px){
-
-.site-footer .container{
-
-grid-template-columns:1fr;
-
-gap:45px;
-
-}
-
-.footer-bottom{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-.footer-description{
-
-max-width:100%;
-
-}
-
+.skip-link:focus { transform: translateY(0); }
+:focus-visible { outline: 3px solid #f2cf48; outline-offset: 3px; }
+img { max-width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

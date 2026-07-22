@@ -23,6 +23,8 @@
 @import url("home-membership.css");
 @import url("home-partners.css");
 
+@import url("pages/premiere-visite.css");
+
 /* Animations et responsive chargés en dernier */
 @import url("09-animations.css");
 @import url("10-responsive.css");
