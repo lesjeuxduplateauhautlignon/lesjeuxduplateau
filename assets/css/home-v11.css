@@ -1,0 +1,245 @@
+/* =======================================================
+   LES JEUX DU PLATEAU — ACCUEIL V1.1
+   Sprint 3.2 : humanisation et finition
+   Surcharge isolée pour éviter les effets de bord.
+======================================================= */
+
+.home-v11 .hero-content {
+    max-width: 780px;
+}
+
+.home-v11 .hero-content h1 {
+    max-width: 900px;
+    text-wrap: balance;
+}
+
+.home-v11 .hero-content > p:not(.hero-kicker) {
+    max-width: 720px;
+    text-wrap: pretty;
+}
+
+/* Entrée progressive, discrète et accessible */
+.home-v11 .hero-kicker,
+.home-v11 .hero-content h1,
+.home-v11 .hero-content > p:not(.hero-kicker),
+.home-v11 .hero-buttons {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: homeHeroReveal .55s ease-out forwards;
+}
+.home-v11 .hero-content h1 { animation-delay: .08s; }
+.home-v11 .hero-content > p:not(.hero-kicker) { animation-delay: .16s; }
+.home-v11 .hero-buttons { animation-delay: .24s; }
+
+@keyframes homeHeroReveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Le jeu est un prétexte : la photo devient plus présente */
+.home-v11 .intro .container {
+    grid-template-columns: 1.08fr .92fr;
+    gap: clamp(56px, 6vw, 96px);
+}
+.home-v11 .intro-image img {
+    height: min(760px, 72vw);
+    min-height: 580px;
+}
+.home-v11 .intro-content p {
+    max-width: 590px;
+}
+
+/* Rendez-vous : cartes plus légères et photographies plus généreuses */
+.home-v11 .next-events {
+    padding: 118px 0 126px;
+}
+.home-v11 .next-events-header {
+    max-width: 820px;
+    margin-bottom: 58px;
+}
+.home-v11 .event-card {
+    box-shadow: 0 18px 48px rgba(31, 52, 47, .09);
+}
+.home-v11 .event-image {
+    height: 280px;
+}
+.home-v11 .event-content {
+    padding: 28px 30px 32px;
+}
+.home-v11 .event-location {
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .82rem;
+}
+.home-v11 .event-time {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0 0 16px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(47, 111, 98, .09);
+}
+.home-v11 .events-footer {
+    margin-top: 44px;
+}
+
+/* Première visite : promesse juste avant l'action */
+.home-v11 .first-visit-promise {
+    margin: 30px 0 24px;
+    padding-left: 20px;
+    border-left: 3px solid var(--color-secondary);
+    color: var(--color-text);
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+/* Adhésion : respiration finale */
+.home-v11 .membership-header {
+    max-width: 820px;
+}
+.home-v11 .membership-header > p {
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+/* Conclusion immersive */
+.home-v11 .closing-photo {
+    min-height: clamp(480px, 62vw, 760px);
+    position: relative;
+    overflow: hidden;
+}
+.home-v11 .closing-photo > img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+    object-position: center 42%;
+    transform: scale(1.01);
+}
+.home-v11 .closing-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 40px 24px;
+    background: linear-gradient(180deg, rgba(15, 28, 25, .16), rgba(15, 28, 25, .64));
+}
+.home-v11 .closing-content {
+    max-width: 900px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 3px 24px rgba(0,0,0,.35);
+}
+.home-v11 .closing-content h2 {
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.02;
+    text-wrap: balance;
+}
+.home-v11 .closing-content p {
+    margin: 0;
+    color: rgba(255,255,255,.92);
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+/* Footer : signature plus chaleureuse */
+.home-v11 .site-footer {
+    padding-top: 82px;
+}
+.home-v11 .footer-description {
+    max-width: 360px;
+    color: rgba(255,255,255,.88);
+    font-size: 1.08rem;
+}
+.home-v11 .footer-contact a {
+    color: rgba(255,255,255,.75);
+    overflow-wrap: anywhere;
+}
+.home-v11 .footer-contact a:hover {
+    color: var(--color-secondary);
+}
+.home-v11 .footer-signoff {
+    margin-top: 62px;
+    padding: 38px 0 0;
+    border-top: 1px solid rgba(255,255,255,.12);
+    text-align: center;
+}
+.home-v11 .footer-signoff p {
+    margin: 0;
+    color: rgba(255,255,255,.65);
+}
+.home-v11 .footer-signoff-title {
+    margin-top: 7px !important;
+    color: #fff !important;
+    font-family: var(--font-title);
+    font-size: clamp(1.55rem, 3vw, 2.25rem);
+    font-weight: 700;
+}
+.home-v11 .footer-bottom {
+    margin-top: 32px;
+}
+
+
+/* Footer : retours à la ligne maîtrisés */
+.home-v11 .footer-description span,
+.home-v11 .footer-copyright span,
+.home-v11 .footer-credit span {
+    display: block;
+}
+.home-v11 .footer-credit-name {
+    white-space: nowrap;
+}
+.home-v11 .footer-copyright,
+.home-v11 .footer-credit {
+    line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+    .home-v11 .intro .container {
+        grid-template-columns: 1fr;
+    }
+    .home-v11 .intro-image img {
+        height: min(680px, 88vw);
+        min-height: 480px;
+    }
+    .home-v11 .event-image {
+        height: 100%;
+        min-height: 290px;
+    }
+}
+
+@media (max-width: 700px) {
+    .home-v11 .hero-content h1 {
+        font-size: clamp(2.55rem, 12vw, 4rem);
+    }
+    .home-v11 .intro-image img {
+        height: 115vw;
+        min-height: 0;
+        max-height: 610px;
+    }
+    .home-v11 .event-image {
+        height: 235px;
+        min-height: 0;
+    }
+    .home-v11 .closing-photo {
+        min-height: 520px;
+    }
+    .home-v11 .closing-photo > img {
+        object-position: 58% center;
+    }
+    .home-v11 .footer-signoff {
+        margin-top: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-v11 .hero-kicker,
+    .home-v11 .hero-content h1,
+    .home-v11 .hero-content > p:not(.hero-kicker),
+    .home-v11 .hero-buttons {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
