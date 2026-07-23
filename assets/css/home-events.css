@@ -1,288 +1,165 @@
 /*==================================================
   LES JEUX DU PLATEAU
-  NEXT-EVENTS.CSS
+  HOME — RENDEZ-VOUS MENSUELS
 ==================================================*/
 
-/*=========================================
-  SECTION
-=========================================*/
-
-.next-events{
-
-    background:var(--color-section);
-
-    padding:140px 0;
-
+.next-events {
+    background: var(--color-section);
+    padding: 128px 0;
 }
 
-.next-events-header{
-
-    text-align:center;
-
-    max-width:760px;
-
-    margin:0 auto 80px;
-
+.next-events-header {
+    max-width: 780px;
+    margin: 0 auto 64px;
+    text-align: center;
 }
 
-.next-events-header h2{
-
-    margin:18px 0 28px;
-
+.next-events-header h2 {
+    margin: 18px 0 24px;
 }
 
-.next-events-header p{
-
-    font-size:1.15rem;
-
+.next-events-header > p:last-child {
+    font-size: 1.08rem;
+    line-height: 1.75;
 }
 
-
-/*=========================================
-  GRID
-=========================================*/
-
-.events-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:40px;
-
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
 }
 
-
-/*=========================================
-  EVENT
-=========================================*/
-
-.event-card{
-
-    background:white;
-
-    border:1px solid rgba(47,111,98,.10);
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    box-shadow:var(--shadow-medium);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-
+.event-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(47, 111, 98, .10);
+    border-radius: 24px;
+    box-shadow: var(--shadow-medium);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-.event-card:hover{
-
-    transform:translateY(-4px);
-
-    border-color:rgba(47,111,98,.22);
-
-    box-shadow:var(--shadow-large);
-
+.event-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(47, 111, 98, .22);
+    box-shadow: var(--shadow-large);
 }
 
-
-/*=========================================
-  PHOTO
-=========================================*/
-
-.event-image{
-
-    position:relative;
-
-    height:220px;
-
-    overflow:hidden;
-
+.event-image {
+    height: 230px;
+    overflow: hidden;
 }
 
-.event-image img{
-
-    display:block;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:transform .5s ease;
-
+.event-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
 }
 
-.event-card:hover .event-image img{
+.venue-card:nth-child(1) .event-image img { object-position: center 42%; }
+.venue-card:nth-child(2) .event-image img { object-position: center 48%; }
+.venue-card:nth-child(3) .event-image img { object-position: center 42%; }
 
-    transform:scale(1.025);
-
+.event-card:hover .event-image img {
+    transform: scale(1.025);
 }
 
-
-/*=========================================
-  DATE
-=========================================*/
-
-.event-date{
-
-    position:absolute;
-
-    left:24px;
-
-    bottom:-28px;
-
-    width:74px;
-
-    height:74px;
-
-    border-radius:18px;
-
-    background:var(--color-secondary);
-
-    color:white;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:var(--shadow-medium);
-
+.event-content {
+    padding: 30px 30px 34px;
 }
 
-.event-day{
-
-    font-size:1.8rem;
-
-    font-weight:700;
-
-    line-height:1;
-
+.event-location {
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    font-weight: 700;
 }
 
-.event-month{
-
-    font-size:.8rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-
+.event-title {
+    margin-bottom: 16px;
+    font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+    line-height: 1.2;
 }
 
-
-/*=========================================
-  CONTENT
-=========================================*/
-
-.event-content{
-
-    padding:48px 30px 30px;
-
+.event-time {
+    margin: -4px 0 14px;
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: .02em;
 }
 
-.event-location{
-
-    color:var(--color-primary);
-
-    font-weight:600;
-
-    margin-bottom:12px;
-
-}
-
-.event-title{
-
-    margin-bottom:20px;
-
-}
-
-.event-meta{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    margin-bottom:28px;
-
-}
-
-.event-meta span {
+.venue-description {
+    margin: 0;
     color: var(--color-text-light);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: .98rem;
+    line-height: 1.65;
 }
 
-
-/*=========================================
-  BUTTON
-=========================================*/
-
-.event-card .button{
-
-    width:100%;
-
+.events-note {
+    max-width: 720px;
+    margin: 46px auto 0;
+    color: var(--color-text-light);
+    font-size: .96rem;
+    line-height: 1.65;
+    text-align: center;
 }
 
-
-/*=========================================
-  FOOTER
-=========================================*/
-
-.events-footer{
-
-    text-align:center;
-
-    margin-top:70px;
-
+.events-footer {
+    margin-top: 30px;
+    text-align: center;
 }
 
+@media (max-width: 1100px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+        margin: 0 auto;
+    }
 
-/*=========================================
-  RESPONSIVE
-=========================================*/
+    .event-card {
+        display: grid;
+        grid-template-columns: minmax(240px, .9fr) 1.1fr;
+    }
 
-@media(max-width:1100px){
+    .event-image {
+        height: 100%;
+        min-height: 250px;
+    }
 
-.events-grid{
-
-grid-template-columns:1fr;
-
-max-width:700px;
-
-margin:auto;
-
+    .event-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
-}
+@media (max-width: 700px) {
+    .next-events {
+        padding: 88px 0;
+    }
 
+    .next-events-header {
+        margin-bottom: 44px;
+    }
 
-@media(max-width:768px){
+    .events-grid {
+        gap: 24px;
+    }
 
-.next-events{
+    .event-card {
+        display: block;
+    }
 
-padding:90px 0;
+    .event-image {
+        height: 210px;
+        min-height: 0;
+    }
 
-}
+    .event-content {
+        padding: 26px 24px 30px;
+    }
 
-.event-image{
-
-height:200px;
-
-}
-
-.event-content{
-
-padding:42px 24px 24px;
-
-}
-
+    .events-note {
+        margin-top: 34px;
+    }
 }
