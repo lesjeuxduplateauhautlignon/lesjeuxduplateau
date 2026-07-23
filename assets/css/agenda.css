@@ -1,6 +1,6 @@
 /* ==========================================================
    AGENDA — LES JEUX DU PLATEAU
-   Sprint 2.8
+   Sprint 3.3.6 — Audit final Agenda
    ========================================================== */
 
 .agenda-page {
@@ -29,55 +29,67 @@
 /* HERO */
 .agenda-hero {
     position: relative;
-    min-height: 840px;
+    min-height: 820px;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: calc(var(--header-height) + 92px) 0 100px;
+    padding: calc(var(--header-height) + 86px) 0 96px;
     color: var(--color-white);
 }
 .agenda-hero-media,
 .agenda-hero-overlay { position: absolute; inset: 0; }
-.agenda-hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.agenda-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 44%; transform: scale(1.015); }
 .agenda-hero-overlay {
-    background: linear-gradient(90deg, rgba(24, 74, 63, .97) 0%, rgba(35, 91, 78, .94) 48%, rgba(24, 59, 51, .78) 100%);
+    background:
+        radial-gradient(circle at 72% 40%, rgba(255, 255, 255, .08), transparent 34%),
+        linear-gradient(90deg, rgba(18, 62, 53, .88) 0%, rgba(31, 88, 75, .72) 48%, rgba(19, 57, 49, .42) 100%);
 }
 .agenda-hero-grid {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(390px, .75fr);
-    gap: 84px;
+    grid-template-columns: minmax(0, 1.08fr) minmax(390px, .72fr);
+    gap: clamp(54px, 6vw, 92px);
     align-items: center;
 }
-.agenda-hero-copy { max-width: 720px; }
-.agenda-hero .section-tag { background: rgba(255,255,255,.12); color: var(--color-white); }
+.agenda-hero-copy { max-width: 760px; }
+.agenda-hero .section-tag { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.09); color: var(--color-white); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
 .agenda-hero h1 {
-    max-width: 760px;
-    margin: 24px 0 28px;
+    max-width: 800px;
+    margin: 26px 0 30px;
     color: var(--color-white);
-    font-size: clamp(3.8rem, 6.4vw, 7.1rem);
-    line-height: .96;
-    letter-spacing: -.055em;
+    font-size: clamp(3.9rem, 6.15vw, 6.85rem);
+    line-height: .94;
+    letter-spacing: -.06em;
+    text-wrap: balance;
 }
 .agenda-hero-copy > p {
-    max-width: 650px;
-    margin: 0 0 38px;
+    max-width: 670px;
+    margin: 0 0 40px;
     color: rgba(255,255,255,.86);
-    font-size: clamp(1.08rem, 1.5vw, 1.3rem);
-    line-height: 1.75;
+    font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+    line-height: 1.72;
 }
-.agenda-hero .button-primary { background: var(--color-accent); color: var(--color-text); }
+.agenda-hero .button-primary { padding: 13px 25px; background: var(--color-accent); color: var(--color-text); box-shadow: 0 12px 30px rgba(12, 36, 31, .18); }
 .agenda-hero .button-primary:hover { background: var(--color-accent-light); }
+.agenda-hero-reassurance {
+    margin: 18px 0 0 !important;
+    color: rgba(255,255,255,.72) !important;
+    font-size: .84rem !important;
+    font-weight: 600;
+    letter-spacing: .01em;
+    line-height: 1.55 !important;
+}
 
 /* Prochaine rencontre */
 .next-event {
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,.24);
+    border: 1px solid rgba(255,255,255,.34);
     border-radius: var(--radius-large);
-    background: rgba(255,255,255,.96);
+    background: rgba(255,255,255,.97);
     color: var(--color-text);
-    box-shadow: 0 32px 80px rgba(8, 32, 27, .28);
+    box-shadow: 0 34px 85px rgba(8, 32, 27, .30);
+    transform: translateY(4px);
 }
 .next-event-kicker {
     margin: 0;
@@ -131,23 +143,49 @@
 
 /* RYTHME DES RENCONTRES */
 .agenda-rhythm { padding: var(--space-section) 0; background: var(--color-white); }
-.rhythm-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-.rhythm-card { overflow: hidden; border: 1px solid #e2e8e5; border-radius: var(--radius-large); background: var(--color-white); box-shadow: 0 18px 50px rgba(31, 66, 58, .08); transition: transform .25s ease, box-shadow .25s ease; }
-.rhythm-card:hover { transform: translateY(-7px); box-shadow: 0 28px 65px rgba(31, 66, 58, .14); }
-.rhythm-image { height: 280px; overflow: hidden; }
-.rhythm-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.rhythm-card:hover .rhythm-image img { transform: scale(1.035); }
-.rhythm-content { position: relative; min-height: 350px; padding: 38px 34px 36px; border-top: 7px solid var(--place-color); }
+.rhythm-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.rhythm-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e3e9e6;
+    border-radius: var(--radius-large);
+    background: var(--color-white);
+    color: var(--color-text);
+    text-decoration: none;
+    box-shadow: 0 14px 38px rgba(31, 66, 58, .07);
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+.rhythm-card:hover,
+.rhythm-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgba(47, 111, 98, .25);
+    box-shadow: 0 22px 50px rgba(31, 66, 58, .12);
+}
+.rhythm-card:focus-visible { outline: 3px solid rgba(47, 111, 98, .22); outline-offset: 4px; }
+.rhythm-image { height: 250px; overflow: hidden; background: #edf2ef; }
+.rhythm-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+.rhythm-mazet .rhythm-image img { object-position: center 42%; }
+.rhythm-tence .rhythm-image img { object-position: center 38%; }
+.rhythm-chambon .rhythm-image img { object-position: center 48%; }
+.rhythm-card:hover .rhythm-image img { transform: scale(1.025); }
+.rhythm-content { position: relative; min-height: 320px; padding: 34px 32px 32px; border-top: 5px solid var(--place-color); }
 .rhythm-mazet { --place-color: #4d8cc9; }
 .rhythm-tence { --place-color: #64a574; }
 .rhythm-chambon { --place-color: #e58a45; }
-.rhythm-index { position: absolute; top: 30px; right: 30px; color: #e1e8e5; font: 800 2.8rem/1 Poppins, sans-serif; }
-.rhythm-day { max-width: 75%; margin: 0 0 17px; color: var(--place-color); font-size: .76rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
-.rhythm-content h3 { max-width: 88%; margin: 0 0 18px; font-size: clamp(1.8rem, 2.2vw, 2.55rem); line-height: 1.05; }
-.rhythm-content > p:not(.rhythm-day) { min-height: 78px; margin-bottom: 25px; color: var(--color-text-light); }
-.rhythm-content a { color: var(--color-text); font-weight: 800; text-decoration: none; }
-.rhythm-content a:hover { color: var(--place-color); }
-.rhythm-note { max-width: 760px; margin: 38px auto 0; color: var(--color-text-light); text-align: center; }
+.rhythm-index { position: absolute; top: 28px; right: 28px; color: #e5ebe8; font: 800 2.45rem/1 Poppins, sans-serif; }
+.rhythm-day { max-width: 76%; margin: 0 0 16px; color: var(--place-color); font-size: .72rem; font-weight: 800; letter-spacing: .1em; line-height: 1.45; text-transform: uppercase; }
+.rhythm-content h3 { max-width: 88%; margin: 0 0 24px; font-size: clamp(1.75rem, 2.1vw, 2.35rem); line-height: 1.08; }
+.rhythm-place { margin: 0 0 5px; color: var(--color-text); font-weight: 700; }
+.rhythm-time { margin: 0 0 30px; color: var(--color-text-light); }
+.rhythm-link { position: absolute; left: 32px; bottom: 31px; color: var(--color-primary); font-weight: 800; }
+.rhythm-link span { display: inline-block; margin-left: 4px; transition: transform .2s ease; }
+.rhythm-card:hover .rhythm-link span { transform: translateX(5px); }
+.rhythm-note { max-width: 760px; margin: 36px auto 0; color: var(--color-text-light); text-align: center; }
 
 /* PREMIÈRE VISITE */
 .agenda-welcome { padding: 0 0 var(--space-section); background: var(--color-white); }
@@ -167,22 +205,102 @@
 .agenda-welcome-text strong { color: var(--color-white); }
 .agenda-welcome-text .button { margin-top: 12px; background: var(--color-accent); color: var(--color-text); }
 
-/* CALENDRIER */
-.agenda-calendar { padding: var(--space-section) 0; background: #f4f7f5; }
-.calendar-heading { display: grid; grid-template-columns: 1fr .8fr; gap: 80px; align-items: end; margin-bottom: 52px; }
-.calendar-heading p { margin: 0 0 10px; color: var(--color-text-light); font-size: 1.06rem; }
-.calendar-shell { min-height: 680px; overflow: hidden; border: 1px solid #dfe7e3; border-radius: var(--radius-large); background: var(--color-white); box-shadow: var(--shadow-medium); }
-.google-calendar { display: block; width: 100%; height: 680px; border: 0; }
-.calendar-placeholder { min-height: 680px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 25px; text-align: center; }
-.calendar-placeholder-icon { position: relative; width: 86px; height: 82px; margin-bottom: 28px; border: 4px solid var(--color-primary); border-radius: 14px; }
-.calendar-placeholder-icon::before { content: ""; position: absolute; left: -4px; right: -4px; top: 20px; border-top: 4px solid var(--color-primary); }
-.calendar-placeholder-icon span { position: absolute; top: -13px; width: 4px; height: 25px; border-radius: 4px; background: var(--color-primary); }
-.calendar-placeholder-icon span:first-child { left: 20px; }
-.calendar-placeholder-icon span:last-child { right: 20px; }
-.calendar-placeholder-label { margin: 0 0 12px; color: var(--color-primary); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.calendar-placeholder h3 { margin: 0 0 14px; font-size: clamp(1.8rem, 3vw, 2.8rem); }
-.calendar-placeholder > p:last-child { max-width: 670px; margin: 0; color: var(--color-text-light); }
-.calendar-placeholder code { padding: 2px 7px; border-radius: 5px; background: #edf2ef; color: var(--color-primary); }
+/* CALENDRIER — SPRINT 3.3.4 */
+.agenda-calendar {
+    position: relative;
+    padding: var(--space-section) 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 8% 10%, rgba(47, 111, 98, .08), transparent 34%),
+        #f4f7f5;
+}
+.calendar-heading {
+    display: grid;
+    grid-template-columns: 1.05fr .75fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 52px;
+}
+.calendar-heading h2 { max-width: 760px; }
+.calendar-heading p {
+    max-width: 560px;
+    margin: 0 0 10px;
+    color: var(--color-text-light);
+    font-size: 1.06rem;
+    line-height: 1.75;
+}
+.calendar-shell {
+    overflow: hidden;
+    border: 1px solid rgba(47, 111, 98, .14);
+    border-radius: var(--radius-large);
+    background: var(--color-white);
+    box-shadow: 0 28px 72px rgba(31, 66, 58, .12);
+}
+.calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 25px 30px;
+    border-bottom: 1px solid #e4ebe7;
+    background: rgba(255, 255, 255, .98);
+}
+.calendar-toolbar p { margin: 0; }
+.calendar-toolbar-kicker {
+    margin-bottom: 5px !important;
+    color: var(--color-primary);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+.calendar-toolbar-title {
+    color: var(--color-text);
+    font: 700 1.1rem/1.35 Poppins, sans-serif;
+}
+.calendar-external-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 17px;
+    border: 1px solid rgba(47, 111, 98, .2);
+    border-radius: 999px;
+    color: var(--color-primary);
+    font-size: .88rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.calendar-external-link:hover,
+.calendar-external-link:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(47, 111, 98, .38);
+    background: #eef5f2;
+}
+.calendar-external-link:focus-visible {
+    outline: 3px solid rgba(47, 111, 98, .18);
+    outline-offset: 3px;
+}
+.calendar-frame {
+    min-height: 680px;
+    padding: 12px;
+    background: #f7f9f8;
+}
+.google-calendar {
+    display: block;
+    width: 100%;
+    height: 680px;
+    border: 0;
+    border-radius: calc(var(--radius-large) - 10px);
+    background: var(--color-white);
+}
+.calendar-help {
+    margin: 18px 0 0;
+    color: var(--color-text-light);
+    font-size: .88rem;
+    text-align: center;
+}
 
 /* COMMENT ÇA MARCHE */
 .agenda-how { padding: var(--space-section) 0; background: var(--color-white); }
@@ -231,7 +349,9 @@
 @media (max-width: 680px) {
     .agenda-hero { padding: calc(var(--header-height) + 68px) 0 76px; }
     .agenda-hero-overlay { background: rgba(28, 82, 70, .93); }
-    .agenda-hero h1 { font-size: clamp(3.15rem, 14vw, 5rem); }
+    .agenda-hero h1 { font-size: clamp(3.1rem, 13.5vw, 4.9rem); }
+    .agenda-hero h1 br { display: none; }
+.agenda-hero-reassurance { max-width: 320px; }
     .agenda-quote { padding: 88px 0; }
     .agenda-quote p { font-size: clamp(2.8rem, 13vw, 4.8rem); }
     .agenda-rhythm,
@@ -273,3 +393,16 @@
     line-height: 1.45;
 }
 .next-event.is-live .next-event-status { display: none; }
+
+/* SPRINT 3.3.4 — RESPONSIVE CALENDRIER */
+@media (max-width: 860px) {
+    .calendar-toolbar { align-items: flex-start; }
+}
+@media (max-width: 680px) {
+    .calendar-heading { gap: 24px; margin-bottom: 36px; }
+    .calendar-toolbar { flex-direction: column; padding: 22px; }
+    .calendar-external-link { width: 100%; justify-content: center; }
+    .calendar-frame { min-height: 600px; padding: 6px; }
+    .google-calendar { height: 600px; border-radius: calc(var(--radius-medium) - 4px); }
+    .calendar-help { padding: 0 12px; }
+}
