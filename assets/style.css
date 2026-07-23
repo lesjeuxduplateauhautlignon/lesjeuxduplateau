@@ -1,0 +1,33 @@
+/* =======================================================
+   LES JEUX DU PLATEAU — FEUILLE DE STYLE PRINCIPALE
+   Sprint 2.2
+======================================================= */
+
+/* Socle du Design System */
+@import url("01-variables.css");
+@import url("02-reset.css");
+@import url("03-base.css");
+@import url("04-layout.css");
+@import url("05-components.css");
+
+/* Structure commune */
+@import url("06-header.css");
+@import url("07-footer.css");
+
+/* Accueil */
+@import url("home-hero.css");
+@import url("08-hero.css");
+@import url("home-intro.css");
+@import url("home-events.css");
+@import url("home-first-visit.css");
+@import url("home-membership.css");
+@import url("home-partners.css");
+
+@import url("pages/premiere-visite.css");
+
+/* Animations et responsive chargés en dernier */
+@import url("09-animations.css");
+@import url("10-responsive.css");
+
+/* Accueil — Sprint 3.2 / V1.1 */
+@import url("home-v11.css");
