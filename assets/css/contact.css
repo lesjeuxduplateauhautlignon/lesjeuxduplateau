@@ -583,8 +583,30 @@
     }
 }
 
+
+
+/* Lien e-mail court et lisible sur tous les écrans */
+.contact-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.contact-email-link span {
+    transition: transform .2s ease;
+}
+
+.contact-email-link:hover span,
+.contact-email-link:focus-visible span {
+    transform: translateX(4px);
+}
+
 @media (prefers-reduced-motion: reduce) {
     .contact-text-link span,
+    .contact-email-link span,
     .contact-field input,
     .contact-field textarea {
         transition: none;
