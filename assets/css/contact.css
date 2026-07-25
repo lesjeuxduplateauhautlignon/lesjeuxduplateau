@@ -604,6 +604,33 @@
     transform: translateX(4px);
 }
 
+
+
+/* État d'envoi du formulaire */
+.contact-form-status {
+    min-height: 1.5em;
+    margin: 18px 0 0;
+    color: var(--color-text-light);
+    font-size: .92rem;
+    line-height: 1.5;
+}
+
+.contact-form-status.is-error {
+    color: #9f2f2f;
+    font-weight: 600;
+}
+
+.contact-form-status.is-success {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.contact-submit:disabled {
+    cursor: wait;
+    opacity: .72;
+    transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .contact-text-link span,
     .contact-email-link span,

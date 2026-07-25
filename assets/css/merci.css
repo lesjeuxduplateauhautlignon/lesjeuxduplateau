@@ -1,0 +1,150 @@
+/* =======================================================
+   LES JEUX DU PLATEAU — PAGE MERCI
+   Sprint 3.4
+======================================================= */
+
+.thanks-page {
+    background: var(--color-background);
+}
+
+.thanks-page .site-header {
+    background: rgba(255, 255, 255, .92);
+    border-bottom: 1px solid rgba(47, 111, 98, .1);
+    box-shadow: 0 8px 28px rgba(31, 62, 55, .06);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.thanks-page .main-nav a,
+.thanks-page .site-header.scrolled .main-nav a {
+    color: var(--color-primary-dark);
+}
+
+.thanks-page .menu-toggle span,
+.thanks-page .site-header.scrolled .menu-toggle span {
+    background: var(--color-primary-dark);
+}
+
+.thanks-hero {
+    position: relative;
+    min-height: 780px;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--header-height) + 110px) 0 110px;
+    color: var(--color-white);
+    isolation: isolate;
+}
+
+.thanks-hero-media,
+.thanks-hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.thanks-hero-media {
+    z-index: -2;
+    overflow: hidden;
+}
+
+.thanks-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 46%;
+}
+
+.thanks-hero-overlay {
+    z-index: -1;
+    background:
+        linear-gradient(90deg,
+            rgba(15, 35, 31, .86) 0%,
+            rgba(15, 35, 31, .6) 50%,
+            rgba(15, 35, 31, .18) 100%),
+        linear-gradient(0deg,
+            rgba(15, 35, 31, .35),
+            transparent 58%);
+}
+
+.thanks-hero-content {
+    width: 100%;
+}
+
+.thanks-hero-content > * {
+    max-width: 780px;
+}
+
+.thanks-hero .section-tag {
+    background: rgba(255, 255, 255, .14);
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, .22);
+}
+
+.thanks-hero h1 {
+    margin: 22px 0 24px;
+    color: var(--color-white);
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 1.03;
+    letter-spacing: -.045em;
+}
+
+.thanks-lead {
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, .94);
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.thanks-secondary {
+    margin: 0 0 34px;
+    color: rgba(255, 255, 255, .86);
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+.thanks-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.thanks-button-light {
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, .72);
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(8px);
+}
+
+.thanks-button-light:hover,
+.thanks-button-light:focus-visible {
+    color: var(--color-primary-dark);
+    background: var(--color-white);
+    border-color: var(--color-white);
+}
+
+@media (max-width: 760px) {
+    .thanks-hero {
+        min-height: 700px;
+        align-items: flex-end;
+        padding: calc(var(--header-height) + 90px) 0 74px;
+    }
+
+    .thanks-hero-overlay {
+        background:
+            linear-gradient(0deg,
+                rgba(15, 35, 31, .91) 0%,
+                rgba(15, 35, 31, .62) 68%,
+                rgba(15, 35, 31, .28) 100%);
+    }
+}
+
+@media (max-width: 520px) {
+    .thanks-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .thanks-actions .button {
+        width: 100%;
+    }
+}

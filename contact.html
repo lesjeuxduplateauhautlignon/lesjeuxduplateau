@@ -131,8 +131,9 @@
                     </p>
 
                     <form class="contact-form"
-      action="https://formspree.io/f/xnjeopgg"
-      method="post">
+                          id="contact-form"
+                          action="https://formspree.io/f/xnjeopgg"
+                          method="post">
 
                         <div class="contact-form-row">
                             <div class="contact-field">
@@ -179,6 +180,12 @@
                                 type="submit">
                             Envoyer mon message
                         </button>
+
+
+                        <p class="contact-form-status"
+                           id="contact-form-status"
+                           role="status"
+                           aria-live="polite"></p>
 
                         <p class="contact-response-time">
                             Nous répondons généralement sous 48 heures.
@@ -388,5 +395,6 @@
     </footer>
 
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/contact.js"></script>
 </body>
 </html>
